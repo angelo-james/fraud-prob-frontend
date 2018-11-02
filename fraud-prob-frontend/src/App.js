@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import FraudTable from './Components/FraudTable';
 import './App.css';
+import axios from 'axios';
 
 class App extends Component {
   state = {
@@ -26,21 +27,25 @@ class App extends Component {
         description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maxime, nisi?'}
     ]
   }
+
+  getData = () => {
+    axios.get(/*insert endpoint here*/)
+    .then( events => { this.setState({ events }) });
+  }
+
   render() {
     return (
-      <div>
+      <div className="text-center">
         <h1>Fraud Table</h1>
-        <FraudTable/>
+        <div className="container">
+          <FraudTable events={ this.state.events }/>
+        </div>
       </div>
-      
-      
     );
   }
 }
 
 export default App;
-
-
 
 {/* <div className="App">
         <header className="App-header">
