@@ -1,15 +1,13 @@
 import React, { Component } from 'react'
 
-class FraudTable extends Component {
-
-  render() {
-    console.log(this.props)
-    return (
-      <div>
-        This is the Fraud Table
-      </div>
-    )
-  }
-}
+const FraudTable = (props) => (
+  <div className="container">
+    <h3>{props.name}</h3>
+    <p>{props.description}</p>
+    <div>
+      <label>{props.probFraud}</label>
+    </div>
+  </div>
+)
 
 export default FraudTable;
